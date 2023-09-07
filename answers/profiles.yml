@@ -3,25 +3,23 @@ answers: # this needs to match the profile: in your dbt_project.yml file
   outputs:
     dev:
       type: bigquery
-      method: service-account-json
+      method: oauth
       # To use this, first run (in your terminal): export BIGQUERY_PROJECT="your_project_name"
       # Then dbt will recognise the variable
-      database: michalzyckitest-324113
+      database: "{{ env_var('BIGQUERY_PROJECT') }}"
       schema: dbt_test # Replace this with dbt_your_name, e.g. dbt_bob
       threads: 1 # Max number of concurrent things running at once
       timeout_seconds: 300
       location: US
       priority: interactive # BigQuery can use "batch" or "interactive". https://cloud.google.com/bigquery/docs/running-queries
-      keyfile: /VsCodeReposFolders/Smarketer/Repo/dbt-tutorial-course/michalzyckitest-324113-42651f26b2a1.json
 
     # You won't use this, but an example of using a different target
     production:
       type: bigquery
-      method: service-account-json
-      database: michalzyckitest-324113
+      method: oauth
+      database: "{{ env_var('BIGQUERY_PROJECT') }}"
       schema: dbt_production
       threads: 1
       timeout_seconds: 300
       location: US
       priority: interactive
-      keyfile: /VsCodeReposFolders/Smarketer/Repo/dbt-tutorial-course/michalzyckitest-324113-42651f26b2a1.json
