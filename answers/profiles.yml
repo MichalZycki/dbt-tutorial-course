@@ -12,7 +12,7 @@ answers: # this needs to match the profile: in your dbt_project.yml file
       timeout_seconds: 300
       location: US
       priority: interactive # BigQuery can use "batch" or "interactive". https://cloud.google.com/bigquery/docs/running-queries
-      keyfile: C:\VsCodeReposFolders\Smarketer\Repo\dbt-tutorial-course\michalzyckitest-324113-42651f26b2a1.json
+      keyfile: /VsCodeReposFolders/Smarketer/Repo/dbt-tutorial-course/michalzyckitest-324113-42651f26b2a1.json
 
     # You won't use this, but an example of using a different target
     production:
@@ -24,4 +24,4 @@ answers: # this needs to match the profile: in your dbt_project.yml file
       timeout_seconds: 300
       location: US
       priority: interactive
-      keyfile: C:\VsCodeReposFolders\Smarketer\Repo\dbt-tutorial-course\michalzyckitest-324113-42651f26b2a1.json
+      keyfile: /VsCodeReposFolders/Smarketer/Repo/dbt-tutorial-course/michalzyckitest-324113-42651f26b2a1.json
